@@ -5,9 +5,7 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
-    "build": "webpack",
-    "dev": "nodemon server.js"
+    "start": "webpack serve --open"
   },
   "keywords": [],
   "author": "",

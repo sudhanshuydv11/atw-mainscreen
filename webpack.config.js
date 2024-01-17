@@ -12,8 +12,7 @@ module.exports={
     },
     devServer: {
       static: './dist',
-      compress: true,
-      port:3000
+      compress: true
     },
     module: {
         rules:[
