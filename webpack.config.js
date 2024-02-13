@@ -4,15 +4,12 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports={
   mode: 'development',
-    entry: "./index.js",
+    entry: "./src/core/main.js",
+    
     output: {
       filename: "bundle.js",
       path: path.resolve("dist"),
       publicPath: "/",
-    },
-    devServer: {
-      static: './dist',
-      compress: true
     },
     module: {
         rules:[
@@ -24,6 +21,11 @@ module.exports={
           {
             test: /\.html$/,
             use: "html-loader"
+          },
+          {
+            test: /\.css$/,
+            use: ["style-loader",
+            "css-loader"]
           },
           {
             test: /\.scss$/,
@@ -39,6 +41,10 @@ module.exports={
         new HTMLWebpackPlugin({
           template: "index.html"
         })
-       ]
+       ],
+       resolve: {
+        extensions: [ '.js', '.jsx', '.json', '.scss' ]
+       
+      }
     
 }
