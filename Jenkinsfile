@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                ls
                 cd docs
                 git clone https://github.com/sudhanshuydv11/atw-mainscreen.git
                 cd atw-mainscreen
