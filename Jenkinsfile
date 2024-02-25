@@ -2,14 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone sources') {
+            git url: 'https://github.com/jfrogdev/project-examples.git'
+        }
         stage('Build') {
             steps {
                 echo "building"
-                cd docs
-                git clone https://github.com/sudhanshuydv11/atw-mainscreen.git
-                cd atw-mainscreen
-                npm ci
-                npm run build 
             }
         }
         stage('Test') {
